@@ -1,8 +1,11 @@
 class SearchField extends React.Component {
-  render () {
+  searchCall(query) {
+
+  }
+  render() {
     return <div>
-      FUCK
-    </div>;
+            <SearchForm />
+           </div>;
   }
 }
 
