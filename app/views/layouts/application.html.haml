@@ -6,4 +6,10 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    = yield
+    .top-bar
+      .top-bar-left
+        %ul.menu
+          %li.menu-text
+            StackoverflowApiTest
+    .content
+      = yield

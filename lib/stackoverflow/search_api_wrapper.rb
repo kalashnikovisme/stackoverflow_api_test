@@ -3,7 +3,9 @@ require 'net/http'
 module Stackoverflow::SearchApiWrapper
   class << self
     def search(query)
-      JSON.parse(request(query))["items"].map { |h| h.slice('title', 'link') }
+      JSON.parse(request(query))["items"].map do |h| 
+        h.slice('title', 'link').merge(created_at: I18n.l(Time.at(h['creation_date']), format: '%d %B %Y'))
+      end
     end
 
     private

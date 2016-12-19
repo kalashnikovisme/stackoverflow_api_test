@@ -28,7 +28,7 @@ class SearchForm extends React.Component {
     return <div>
             <form onSubmit={this.onSubmit}>
               <input type="text" name='query' onChange={this.onTextChange} value={this.state.text} />
-              <input type="submit" value="Найти" name="search" />
+              <input type="submit" className="button" value="Найти" name="search" />
             </form>
            </div>
   }
