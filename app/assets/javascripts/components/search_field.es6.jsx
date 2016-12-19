@@ -5,18 +5,19 @@ class SearchField extends React.Component {
     this.fillList = this.fillList.bind(this)
   }
   fillList(results) {
-    alert(5)
+    this.setState({ posts: results })
   }
   render() {
     results = []
     $(this.state.posts).each(function() {
-      <Row title={this.state} url={this.state} />
+      results.push(<ResultRow title={this.title} url={this.url} />)
     })
       
     return <div>
             <SearchForm fillList={this.fillList}/>
-            {results}
+            <ul>
+              {results}
+            </ul>
            </div>
   }
 }
-

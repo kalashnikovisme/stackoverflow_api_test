@@ -20,7 +20,7 @@ class SearchForm extends React.Component {
       },
       dataType: 'JSON',
       success: ((data) => {
-        this.props.fillList(null, data)
+        this.props.fillList(data)
       }).bind(this),
     })
   }
