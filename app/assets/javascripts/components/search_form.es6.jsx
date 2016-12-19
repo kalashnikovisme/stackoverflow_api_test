@@ -10,16 +10,27 @@ class SearchForm extends React.Component {
   onTextChange(e) {
     this.setState({ text: e.target.value })
   }
-  onSubmit() {
-    this.props.searchCall(null, this.state.text) 
+  onSubmit(e) {
+    e.preventDefault()
+    $.ajax({
+      url: '/api/posts',
+      method: 'GET',
+      data: {
+        query: e.target.value
+      },
+      dataType: 'JSON',
+      success: ((data) => {
+        this.props.fillList(null, data)
+      }).bind(this),
+    })
   }
   render () {
-    return <div>;
-            <form action="/api/search" acceptCharset="UTF-8" method="get" onSubmit={this.search}>
+    return <div>
+            <form onSubmit={this.onSubmit}>
               <input type="text" name='query' onChange={this.onTextChange} value={this.state.text} />
-              <input type="submit" value="Найти" />
+              <input type="submit" value="Найти" name="search" />
             </form>
-           </div>;
+           </div>
   }
 }
 

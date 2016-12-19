@@ -1,5 +1,5 @@
-class Api::V1::PostsController < Api::ApplicationController
+class Api::V1::PostsController < ApplicationController
   def index
-    head :ok
+    render json: :ok
   end
 end
