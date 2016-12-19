@@ -10,7 +10,7 @@ class SearchField extends React.Component {
   render() {
     results = []
     $(this.state.posts).each(function() {
-      results.push(<ResultRow title={this.title} url={this.url} />)
+      results.push(<ResultRow title={this.title} url={this.link} />)
     })
       
     return <div>

@@ -1,5 +1,6 @@
 class Api::V1::PostsController < ApplicationController
   def index
-    render json: [ { title: :fuck, url: :fucking } ].to_json
+    results = JSON.parse ::Stackoverflow::SearchApiWrapper.search params[:query]
+    render json: results["items"].map { |h| h.slice('title', 'link') }
   end
 end
