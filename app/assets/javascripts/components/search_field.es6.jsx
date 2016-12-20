@@ -9,8 +9,8 @@ class SearchField extends React.Component {
   }
   render() {
     let results = []
-    $(this.state.posts).each(function() {
-      results.push(<ResultRow title={this.title} url={this.link} date={this.created_at} />)
+    $(this.state.posts).each(function(index) {
+      results.push(<ResultRow title={this.title} url={this.link} date={this.created_at} key={index} />)
     })
       
     return <div>

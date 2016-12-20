@@ -17,6 +17,7 @@ gem 'haml-rails'
 gem 'react-rails'
 gem 'foundation-rails'
 gem 'rails_12factor'
+gem 'font-awesome-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
