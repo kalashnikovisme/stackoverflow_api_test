@@ -1,6 +1,6 @@
 Configus.build Rails.env do
   env :production do
-    host 'stackoverflow.herokuapp.com'
+    host 'stackoverflowapitest.herokuapp.com'
     http 'https'
   end
 
