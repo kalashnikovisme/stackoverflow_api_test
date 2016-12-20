@@ -1,0 +1,43 @@
+# this is an example of the Uber API
+# as a demonstration of an API spec in YAML
+swagger: '2.0'
+info:
+  title: StackoverflowApiTest
+  description: Test
+  version: "1.0.0"
+host: stackoverflowapitest.herokuapp.com
+# array of all schemes that your API supports
+schemes:
+  - https
+# will be prefixed to all paths
+basePath: /v1
+produces:
+  - application/json
+paths:
+  /posts:
+    get:
+      summary: Search posts on Stackoverflow
+      description: Search the site for questions using most of the on-site search options.
+      parameters:
+        - name: query
+          in: query
+          description: Search query
+          required: true
+          type: string
+      responses:
+        200:
+          description: Search Results
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Post'
+definitions:
+  Post:
+    type: object
+    properties:
+      title:
+        type: string
+        description: Question title
+      link:
+        type: string
+        description: Question link

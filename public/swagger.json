@@ -1,0 +1,63 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "StackoverflowApiTest",
+        "description": "Test",
+        "version": "1.0.0"
+    },
+    "host": "stackoverflowapitest.herokuapp.com",
+    "schemes": [
+        "https"
+    ],
+    "basePath": "/v1",
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/posts": {
+            "get": {
+                "summary": "Search posts on Stackoverflow",
+                "description": "Search the site for questions using most of the on-site search options.",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "Search query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search Results",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Post"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Post": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "Question title"
+                },
+                "link": {
+                    "type": "string",
+                    "description": "Question link"
+                },
+                "created_at": {
+                    "type": "date",
+                    "description": "Creation date"
+                }
+            }
+        }
+    }
+}
