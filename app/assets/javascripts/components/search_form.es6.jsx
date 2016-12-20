@@ -16,7 +16,7 @@ class SearchForm extends React.Component {
       url: '/api/posts',
       method: 'GET',
       data: {
-        query: e.target.value
+        query: this.state.text
       },
       dataType: 'JSON',
       success: ((data) => {
