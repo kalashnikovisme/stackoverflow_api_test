@@ -53,6 +53,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.3)
+    configus (0.0.5)
     connection_pool (2.2.1)
     debug_inspector (0.0.2)
     erubis (2.7.0)
@@ -197,6 +198,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.1.0)
+  configus
   font-awesome-rails
   foundation-rails
   grape-swagger-rails

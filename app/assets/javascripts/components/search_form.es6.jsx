@@ -15,7 +15,7 @@ class SearchForm extends React.Component {
     e.preventDefault()
     this.setState({ spinnerDisplay: 'inline-block' })
     $.ajax({
-      url: '/api/posts',
+      url: '/api/v1/posts',
       method: 'GET',
       data: {
         query: this.state.text

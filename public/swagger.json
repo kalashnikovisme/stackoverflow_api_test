@@ -5,7 +5,7 @@
         "description": "Test",
         "version": "1.0.0"
     },
-    "host": "stackoverflowapitest.herokuapp.com",
+    "host": "stackoverflowapitest.herokuapp.com/api",
     "schemes": [
         "https"
     ],
